@@ -1,0 +1,24 @@
+一、需求分析
+1. 可以罗列出全国所有的省、市、县。
+2. 可以查看全国任意城市的天气信息。
+3. 可以自由地切换城市，去查看其他城市的天气。
+4. 提供手动更新以及后台自动更新天气的功能。
+
+二、API选定
+中国天气网：http://www.weather.com.cn/data/list3/city.xml，
+访问后返回中国所有的省份名称以及省级代号。
+
+例如：获得某个省内有哪些城市，访问http://www.weather.com.cn/data/list3/city**.xml
+（**为省级代号）
+
+例如：市级信息获取，访问http://www.weather.com.cn/data/list3/city****.xml
+（****为市级代号），以此类推县级……
+
+文件信息返回格式：JSON格式。
+例如：
+{"weatherinfo":
+    {"city":"昆山","cityid":"101190404","temp1":"21℃","temp2":"9℃",
+    "weather":"多云转小雨","img1":"d1.gif","img2":"n7.gif","ptime":"11:00"}
+}
+####github访问页面：https://github.com/sf19881108/coolweather
+####酷欧天气版本库的Git：https://github.com/sf19881108/coolweather.git
