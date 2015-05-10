@@ -22,3 +22,27 @@
 }
 ####github访问页面：https://github.com/sf19881108/coolweather
 ####酷欧天气版本库的Git：https://github.com/sf19881108/coolweather.git
+
+三、数据库和表的设计，将从服务器上获得的数据保存到本地
+Province：
+create table Province (
+    id integer primary key autoincrement,
+    province_name text,
+    province_code text)
+//id是自增长主键，province_name表示省名，province_code表示省级代号
+    
+City：
+create table City (
+    id integer primary key autoincrement,
+    city_name text,
+    city_code text,
+    province_id integer)
+//id是自增长主键，city_name表示城市名，city_code表示市级代号，province_id是City表关联Province表的外键
+
+County：
+create table County (
+    id integer primary key autoincrement,
+    county_name text,
+    county_code text,
+    city_id integer)
+//id是自增长主键，county_name表示县名，county_code表示县级代号，city_id是County表关联City表的外键
